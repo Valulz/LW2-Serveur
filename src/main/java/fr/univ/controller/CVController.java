@@ -31,7 +31,7 @@ public class CVController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public @ResponseBody CVList getCVInXML() throws UnknownHostException {
-        DBCollection coll = getDatabase();
+        //DBCollection coll = getDatabase();
 
         return list;
     }
