@@ -12,48 +12,6 @@ public class CVList {
 
     public CVList() {
         this.cvEntries = new ArrayList<CVEntry>();
-
-        CVEntry cv = new CVEntry();
-        cv.setId(0);
-        cv.setGender(CVEntry.Gender.MR);
-        cv.setName("LOL");
-        cv.setFirstName("XD");
-        cv.setOjective("Devenir le maitre du monde");
-
-        Experience exp = new Experience();
-        exp.setBegin(new Date());
-        exp.setName("Travail");
-        List<Experience> l = new ArrayList<Experience>();
-        l.add(exp);
-        l.add(exp);
-        cv.setExperiences(l);
-
-        School sc = new School();
-        sc.setBegin(new Date());
-        sc.setName("Univ");
-        List<School> ls = new ArrayList<School>();
-        ls.add(sc);
-        ls.add(sc);
-        cv.setSchools(ls);
-
-        Language lang = new Language();
-        lang.setName("Anglais");
-        lang.setLevel(20);
-        lang.setDescription("Lu parle ecrit");
-        List<Language> lg = new ArrayList<Language>();
-        lg.add(lang);
-        lg.add(lang);
-        cv.setLanguages(lg);
-
-        ComputerScienceSkill css = new ComputerScienceSkill();
-        css.setLevel(20);
-        css.setName("Java");
-        List<ComputerScienceSkill> lcss = new ArrayList<ComputerScienceSkill>();
-        lcss.add(css);
-        lcss.add(css);
-        cv.setSkills(lcss);
-
-        cvEntries.add(cv);
     }
 
     public List<CVEntry> getCvEntries() {

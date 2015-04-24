@@ -1,5 +1,6 @@
 package fr.univ.modele;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -16,7 +17,7 @@ public class ComputerScienceSkill {
         return name;
     }
 
-    @XmlElement
+    @XmlAttribute
     public void setName(String name) {
         this.name = name;
     }
@@ -25,7 +26,7 @@ public class ComputerScienceSkill {
         return level;
     }
 
-    @XmlElement
+    @XmlAttribute
     public void setLevel(int level) {
         this.level = level;
     }

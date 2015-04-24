@@ -1,9 +1,10 @@
 package fr.univ.modele;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "school")
+@XmlRootElement(name = "language")
 public class Language {
 
     private String name;
@@ -16,7 +17,7 @@ public class Language {
         return name;
     }
 
-    @XmlElement
+    @XmlAttribute
     public void setName(String name) {
         this.name = name;
     }
@@ -25,7 +26,7 @@ public class Language {
         return level;
     }
 
-    @XmlElement
+    @XmlAttribute
     public void setLevel(int level) {
         this.level = level;
     }
@@ -34,7 +35,7 @@ public class Language {
         return description;
     }
 
-    @XmlElement
+    @XmlAttribute
     public void setDescription(String description) {
         this.description = description;
     }

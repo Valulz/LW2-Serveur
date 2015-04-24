@@ -1,7 +1,9 @@
 package fr.univ.modele;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
 import java.util.Date;
 
 @XmlRootElement(name = "school")
@@ -11,14 +13,13 @@ public class School {
     private Date end;
     private String name;
 
-
     public School() {}
 
     public Date getBegin() {
         return begin;
     }
 
-    @XmlElement
+    @XmlAttribute
     public void setBegin(Date begin) {
         this.begin = begin;
     }
@@ -27,7 +28,7 @@ public class School {
         return end;
     }
 
-    @XmlElement
+    @XmlAttribute
     public void setEnd(Date end) {
         this.end = end;
     }
@@ -36,8 +37,9 @@ public class School {
         return name;
     }
 
-    @XmlElement
+    @XmlValue
     public void setName(String name) {
         this.name = name;
     }
+
 }

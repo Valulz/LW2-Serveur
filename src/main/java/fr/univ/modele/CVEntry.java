@@ -2,7 +2,6 @@ package fr.univ.modele;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.rmi.server.UID;
 import java.util.List;
 
 @XmlRootElement(name="cv")
@@ -13,37 +12,25 @@ public class CVEntry {
         MRS
     }
 
-    private int id;
+    private String id;
     private Gender gender;
-    private String name;
+    private Name name;
     private String firstName;
-    private String ojective;
-    private List<Experience> experiences;
-    private List<School> schools;
-    private List<Language> languages;
-    private List<ComputerScienceSkill> skills;
+    private String objective;
+        private String skill;
+        private List<Experience> experiences;
+        private List<School> schools;
+        private List<Language> languages;
+        private List<ComputerScienceSkill> skills;
 
-    public CVEntry() {}
+        public CVEntry() {}
 
-    public CVEntry(int id, Gender gender, String name, String firstName, String ojective, List<Experience> experiences,
-                   List<School> schools, List<Language> languages, List<ComputerScienceSkill> skills) {
-        this.id = id;
-        this.gender = gender;
-        this.name = name;
-        this.firstName = firstName;
-        this.ojective = ojective;
-        this.experiences = experiences;
-        this.schools = schools;
-        this.languages = languages;
-        this.skills = skills;
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     @XmlElement
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -56,11 +43,11 @@ public class CVEntry {
         this.gender = gender;
     }
 
-    public String getName() {
+    public Name getName() {
         return name;
     }
     @XmlElement
-    public void setName(String name) {
+    public void setName(Name name) {
         this.name = name;
     }
 
@@ -72,12 +59,12 @@ public class CVEntry {
         this.firstName = firstName;
     }
 
-    public String getOjective() {
-        return ojective;
+    public String getObjective() {
+        return objective;
     }
     @XmlElement
-    public void setOjective(String ojective) {
-        this.ojective = ojective;
+    public void setObjective(String objective) {
+        this.objective = objective;
     }
 
     public List<Experience> getExperiences() {
@@ -110,5 +97,13 @@ public class CVEntry {
     @XmlElement
     public void setSkills(List<ComputerScienceSkill> skills) {
         this.skills = skills;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+    @XmlElement
+    public void setSkill(String skill) {
+        this.skill = skill;
     }
 }
