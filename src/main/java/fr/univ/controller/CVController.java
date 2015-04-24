@@ -31,7 +31,7 @@ public class CVController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public @ResponseBody CVList getCVInXML() throws UnknownHostException {
-        //DBCollection coll = getDatabase();
+        DBCollection coll = getDatabase();
 
         return list;
     }
@@ -52,8 +52,8 @@ public class CVController {
     private DBCollection getDatabase() throws UnknownHostException {
         final String host = System.getenv("OPENSHIFT_MONGODB_DB_HOST");
         final String port = System.getenv("OPENSHIFT_MONGODB_DB_PORT");
-        final String user = System.getenv("OPENSHIFT_MONGODB_DB_USERNAME");
-        final String pass = System.getenv("OPENSHIFT_MONGODB_DB_PASSWORD");
+        final String user = "admin";
+        final String pass = " A64RgrVU1IBR";
         final String dbName = "lw2";
         final String collection = "cv";
 
