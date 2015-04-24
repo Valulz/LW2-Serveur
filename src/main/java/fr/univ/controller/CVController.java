@@ -53,9 +53,9 @@ public class CVController {
      */
     private DBCollection getDatabase() throws UnknownHostException {
         final String host = System.getenv("OPENSHIFT_MONGODB_DB_HOST");
-        final String port = System.getenv("OPENSHIFT_MONGODB_DB_PORT");
+        String port = System.getenv("OPENSHIFT_MONGODB_DB_PORT");
         final String user = "admin";
-        final String pass = " A64RgrVU1IBR";
+        final String pass = "A64RgrVU1IBR";
         final String dbName = "lw2";
         final String collection = "cv";
 
