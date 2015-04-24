@@ -39,7 +39,7 @@ public class CVList {
         Language lang = new Language();
         lang.setName("Anglais");
         lang.setLevel(20);
-        lang.setDescription("Lu parlé écrit");
+        lang.setDescription("Lu parle ecrit");
         List<Language> lg = new ArrayList<Language>();
         lg.add(lang);
         lg.add(lang);
