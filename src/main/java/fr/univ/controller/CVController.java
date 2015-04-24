@@ -1,5 +1,7 @@
 package fr.univ.controller;
 
+import com.google.gson.Gson;
+import com.mongodb.util.JSON;
 import fr.univ.modele.CVEntry;
 import fr.univ.modele.CVList;
 import org.springframework.stereotype.Controller;
@@ -31,16 +33,16 @@ public class CVController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public @ResponseBody CVList getCVInXML() throws UnknownHostException {
-        DBCollection coll = getDatabase();
-
         return list;
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public @ResponseBody CVEntry addCv(@RequestBody CVEntry cvEntry){
+    public @ResponseBody CVEntry addCv(@RequestBody CVEntry cvEntry) throws UnknownHostException {
+        DBCollection collection = getDatabase();
+        DBObject dbObject = (DBObject) JSON.parse(new Gson().toJson(cvEntry));
+        collection.insert(dbObject);
 
         list.addCV(cvEntry);
-
         return cvEntry;
     }
 
